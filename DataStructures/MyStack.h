@@ -1,11 +1,11 @@
 #pragma once
 
-//使用数组实现一个栈
+//浣跨敤鏁扮粍瀹炵幇涓�涓爤
 template<typename T>
 class MyStack {
 public:
 	MyStack(size_t initSize) {
-		content = new	 T[initSize];
+		content = new T[initSize];
 		arraySize = initSize;
 	}
 	~MyStack() {
@@ -17,14 +17,14 @@ public:
 		size++;
 		content[size - 1] = node;
 	}
-	T *Pop() {
+	T* Pop() {
 		if (size == 0)
 			return nullptr;
 		else {
-			return &content[size--- 1];
+			return &content[size-- - 1];
 		}
 	}
-	T *Peek() {
+	T* Peek() {
 		if (size == 0)
 			return nullptr;
 		else {
@@ -34,7 +34,7 @@ public:
 	void Clear() {}
 
 	void Resize() {
-		T *temp = new T[2 * size];
+		T* temp = new T[2 * size];
 		for (size_t i = 0; i < size; i++) {
 			temp[i] = content[i];
 		}
@@ -44,7 +44,7 @@ public:
 	}
 
 private:
-	T *content;
+	T* content;
 	size_t arraySize;
 	size_t size;
 };
